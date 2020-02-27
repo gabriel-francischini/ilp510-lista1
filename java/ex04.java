@@ -1,33 +1,34 @@
 import java.util.Scanner;
 
-public class ex04 {
+public class Ex04{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Digite o primeiro numero real positivo");
+        float a = input.nextFloat();
+        System.out.print("Digite o segundo numero real positivo");
+        float b = input.nextFloat();
+        System.out.print("Digite o terceiro numero real positivo");
+        float c = input.nextFloat();
 
-  public static void main(String[] args) {
-    Scanner leTeclado;
-    double a, b, c;
-    String tipo;
-    
-    leTeclado = new Scanner(System.in);
-    System.out.println("Digite um valor para a: ");
-    a = leTeclado.nextDouble();
-    System.out.println("Digite um valor para b: ");
-    b = leTeclado.nextDouble();
-    System.out.println("Digite um valor para c: ");
-    c = leTeclado.nextDouble();
-    leTeclado.close();
-    
-    if ((a+b>c))
-    	tipo = "Triangulo";
+        boolean AisTriangular = ( ( a < (b + c) ) && ( a > (b - c) ) && ( a > (c - b))) ;
+        boolean BisTriangular = ( (b < (a + c)) && ( b > (a - c)) && (b > (c - a))) ;
+        boolean CisTriangular = ( (c < (b + a)) && (c > (b - a)) && (c > (a - b)));
 
-   else if ((a==b) && (b==c))
-					tipo = "Equilatero";  
-	else if ((a==b) && (b!=c))
-					tipo = "Isosceles";
-	else if ((a!=b) && (b!=c))
-					tipo = "Escaleno";
-		else
-			tipo = "Não é um triangulo";
-    System.out.println("O tipo de triangulo é " + tipo + ".");
-  }
-  
+        if (AisTriangular && BisTriangular && CisTriangular){
+            System.out.println("Os numeros formam um triangulo");
+            if ( (a == b) && (b == c) ){
+                System.out.print("Os numeros formam um triangulo equilatero");
+            }
+            else if( (a == b) || (b == c) || (a == c) ){
+                System.out.print("Os numeros formam um triangulo isosceles");
+            }
+            else{
+                System.out.print("os numeros formam um triangulo escaleno");
+            }
+
+        }
+        else{
+            System.out.print("Os dados de entrada nao formam um triangulo");
+        }
+    }
 }
