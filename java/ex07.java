@@ -9,7 +9,6 @@ public class ex07 {
 
         while(n>0){
             System.out.println("Digite um numero:");
-            n = leTeclado.nextInt();
 
             if (elementos == 0)
                 menor = n;
@@ -22,11 +21,11 @@ public class ex07 {
         		menor = n;
             }
 
-            if (n==0){
-                elementos-= 1;
+            if (n>0){
+                elementos+= 1;
             }
             media += n;
-            elementos+= 1;
+            n = leTeclado.nextInt();
         }
     	System.out.println("O maior e " + maior + " e o menor e " + menor + ".");
     	System.out.println("A quantidade de elementos e " + elementos);
