@@ -36,6 +36,6 @@ public class ex09{
         }
         System.out.println("Os valores fornecidos foram " + Valores + ".");
         System.out.println("A soma dos valores fornecidos e " + Armazenar + ".");
-        System.out.println("Os numeros fornecidos foram " + Array.toString(vetor) + ".");
+        System.out.println("Os numeros fornecidos foram " + Arrays.toString(vetor) + ".");
     }
 }
